@@ -1,0 +1,300 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px; 
+    padding: 5px 15px; 
+    background-color: #f9f9f9; 
+    max-width: 500px; 
+    margin: 0 auto; 
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex-grow: 1; 
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px; 
+    background-color: #fff; 
+    color: #333; 
+}
+
+.search-bar button {
+    background-color: #4CAF50; 
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px; 
+    border-radius: 20px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #45a049;
+}
+
+.search-bar input:focus {
+    border-color: #4CAF50; 
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+header .logo h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+header .logo span {
+    color: #ff6347;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #ff6347;
+    border-radius: 5px;
+}
+
+.banner {
+    background-image: url('banner-image.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: #7e2323;
+}
+
+.banner h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.banner .btn {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.banner .btn:hover {
+    background-color: #e55347;
+}
+
+.featured-books {
+    padding: 50px 0;
+    background-color: #e7dede;
+}
+
+.featured-books h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.books {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.book {
+    width: 22%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+}
+
+.book h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.book p {
+    font-size: 18px;
+    color: #333;
+}
+
+.book button {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.book button:hover {
+    background-color: #e55347;
+}
+.old-price {
+    text-decoration: line-through; 
+    color: red;
+    margin-right: 10px;
+}
+
+.book p {
+    font-size: 16px;
+    color: #333;
+}
+
+.book p .old-price {
+    color: #999;
+}
+
+.genres {
+    padding: 50px 0;
+    background-color: #e7e4e4;
+}
+
+.genres h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.genre {
+    margin-bottom: 40px;
+}
+
+.genre h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.genre .books {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.genre .book {
+    width: 22%;
+    margin-bottom: 20px;
+}
+
+.contact {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.contact h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact input, .contact textarea {
+    width: 50%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact button {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #e55347;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 16px;
+}

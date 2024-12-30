@@ -1,0 +1,65 @@
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="dangnhap.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="image/cc87f7bd-6307-4606-9afc-b05ab93ad4f4.jpg" alt="Logo" class="logo-img">
+                <h1>Truyện<span>Hay</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="trangchu.html">Trang Chủ</a></li>
+                    <li><a href="cuahang.html">Cửa Hàng</a></li>
+                    <li><a href="#contact">Liên Hệ</a></li>
+                    <li><a href="#cart">Giỏ Hàng</a></li>
+                    <li><a href="dangnhap.html" id="login-link">Đăng Nhập</a></li>
+                    <li><a href="dangki.html">Đăng Ký</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="login-form">
+        <div class="container">
+            <h2>Đăng Nhập</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Mật khẩu" required>
+                <button type="submit">Đăng Nhập</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Website Bán Truyện. Tất cả các quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var email = document.getElementById("login-email").value;
+            var password = document.getElementById("login-password").value;
+
+            var storedUser = JSON.parse(localStorage.getItem("users")) || [];
+            var userFound = storedUser.find(function(user) {
+                return user.email === email && user.password === password;
+            });
+
+            if (userFound) {
+                localStorage.setItem("loggedInUser", JSON.stringify(userFound));
+                window.location.href = "trangchu.html"; 
+            } else {
+                alert("Email hoặc mật khẩu không đúng!");
+            }
+        });
+    </script>
+</body>
+</html>

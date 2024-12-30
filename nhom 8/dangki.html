@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="dangki.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="image/cc87f7bd-6307-4606-9afc-b05ab93ad4f4.jpg" alt="Logo" class="logo-img">
+                <h1>Truyện<span>Hay</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="trangchu.html">Trang Chủ</a></li>
+                    <li><a href="cuahang.html">Cửa Hàng</a></li>
+                    <li><a href="#contact">Liên Hệ</a></li>
+                    <li><a href="#cart">Giỏ Hàng</a></li>
+                    <li><a href="dangnhap.html">Đăng Nhập</a></li>
+                    <li><a href="dangki.html">Đăng Ký</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="register-form">
+        <div class="container">
+            <h2>Đăng Ký</h2>
+            <form id="register-form">
+                <input type="text" id="register-name" placeholder="Họ và Tên" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Mật khẩu" required>
+                <button type="submit">Đăng Ký</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Website Bán Truyện. Tất cả các quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("register-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var name = document.getElementById("register-name").value;
+            var email = document.getElementById("register-email").value;
+            var password = document.getElementById("register-password").value;
+
+            var storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+            var userExists = storedUsers.find(function(user) {
+                return user.email === email;
+            });
+
+            if (userExists) {
+                alert("Email đã được sử dụng!");
+            } else {
+                var newUser = {
+                    name: name,
+                    email: email,
+                    password: password
+                };
+                storedUsers.push(newUser);
+                localStorage.setItem("users", JSON.stringify(storedUsers));
+                alert("Đăng ký thành công! Bạn có thể đăng nhập ngay.");
+                window.location.href = "dangnhap.html"; 
+            }
+        });
+    </script>
+</body>
+</html>
